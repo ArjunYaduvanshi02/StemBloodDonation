@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html lang="en">
+<style>
+    /* CSS styles for the navigation drawer */
+    .drawer {
+      height: 100%;
+      width: 0;
+      position: fixed;
+      z-index: 1;
+      top: 0;
+      right: 0;
+      background-color: #111;
+      overflow-x: hidden;
+      transition: 0.5s;
+      padding-top: 60px;
+    }
+
+    .drawer a {
+      padding: 8px 8px 8px 32px;
+      text-decoration: none;
+      font-size: 25px;
+      color: #818181;
+      display: block;
+      transition: 0.3s;
+    }
+
+    .drawer a:hover {
+      color: #f1f1f1;
+    }
+
+    .drawer .close {
+      position: absolute;
+      top: 0;
+      right: 25px;
+      font-size: 36px;
+      margin-left: 50px;
+    }
+
+    /* CSS styles for the main content */
+    #main {
+      transition: margin-left .5s;
+      padding: 16px;
+    }
+    .transparent-button {
+      background-color: transparent;
+      border: none;
+      color: #000;
+      padding: 10px 10px;
+      text-decoration: none;
+      display: inline-block;
+      font-size: 10px;
+      cursor: pointer;
+    }
+</style>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content=" width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fight Against Cancer</title>
+    <link rel="stylesheet" href="/static/css/index.css">
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200;1,200&family=Rubik:wght@300;400;700&display=swap">
+    <script src="https://kit.fontawesome.com/2ab33e9dce.js" crossorigin="anonymous"></script>
+</head>
+
+<body>
+    <div id="myDrawer" class="drawer">
+        <a href="javascript:void(0)" class="close" onclick="closeDrawer()">&times;</a>
+        <a href="javascript:void(0)"  onclick="closeDrawer()">Home</a>
+        <a href="#">Career</a>
+        <a href="{{ url_for('register_func') }}">Register</a>
+        <a href="{{ url_for('contact_us') }}">Contact</a>
+        <a href="{{ url_for('FAQ_func') }}">Frequently asked questions</a>
+        <a href="{{ url_for('index_func') }}">Admin login</a>
+        <a href="{{ url_for('donation') }}">Help us</a>
+    </div>
+  <script>
+    function openDrawer() {
+      document.getElementById("myDrawer").style.width = "250px";
+      document.getElementById("main").style.marginLeft = "250px";
+    }
+
+    function closeDrawer() {
+      document.getElementById("myDrawer").style.width = "0";
+      document.getElementById("main").style.marginLeft = "0";
+    }
+  </script>
+    <div class="header">
+        <div class="container">
+            <div class="navbar">
+                <div class="logo">
+                    <img src="/static/images/droplet.png" width="90px">
+                    <h3>Elite Stemcell</h3>
+                </div>
+                <nav>
+                    <ul>
+
+                    </ul>
+                </nav>
+
+     <button onclick="openDrawer()" class="transparent-button"><img src="/static/images/list.png" class="list" width="30px"></button>
+            </div>
+            <div class="row">
+                <div class="col-2">
+                    <h1>Donate Stem Cell &<br> Save Life.</h1>
+                    <p>Cancer may have started the fight, but We will finish it.</p>
+                    <a href="{{ url_for('read_more_func') }}" class="btn"> Read More &#8594;</a>
+                </div>
+                <div class="col-2"> <img src="/static/images/sih1.png" width="700px"></div>
+
+            </div>
+        </div>
+    </div>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <video style="text-align: left;" width="1600" height="600" autoplay loop muted>
+      <source src="static/images/video_cancer.mp4" type="video/mp4" />
+    </video>
+    <!-- Process of Donation -->
+    <div class="categories">
+        <div class="small-container">
+
+            <div class="row">
+                <div class="col-3">
+                    <p><img src="/static/images/ptn.jpeg">"Your spit can delete blood cancer from India"</p>
+
+                </div>
+                <div class="col-3">
+                    <p><img src="/static/images/opt.jpeg">"Let's fight together."</p>
+
+                </div>
+                <div class="col-3">
+                    <p><img src="/static/images/xyz.jpeg">"Cancer is only going to be chapter of your life,not the whole story"
+                    </p>
+
+                </div>
+
+
+            </div>
+        </div>
+
+    </div>
+    <!-- Process of Donation -->
+    <div class="small-container">
+        <h2 class=" title">There are many ways to get involved and support our mission.</h2>
+        <div class="row">
+
+
+            <div class="col-4">
+
+                <h4 style="text-align: center; font-weight: bold;"><a href="{{ url_for('register_func') }}"> <img src="/static/images/us.jpeg" ></a>Register as donar</h4>
+
+            </div>
+
+            <div class="col-4">
+                <h4 style="text-align: center; font-weight: bold;"><a href="{{ url_for('donation') }}"><img src="/static/images/register.jpeg"></a>Support us financially</h4>
+
+            </div>
+        </div>
+        <h2 class=" title">Stories that tell what we fight for</h2>
+        <div class="row">
+
+            <div class="col-4">
+                <h4><a href="https://bloodcancer.org.uk/support-for-you/living-well/stories/ericas-story/"> <img src="/static/images/link1.png"></a>"Blood cancer won't stop me enjoying life"<br>Erica, 70, was diagnosed
+                    with blood cancer.
+            </div>
+            <div class="col-4">
+                <h4><a href="https://bloodcancer.org.uk/support-for-you/living-well/stories/robs-stroy/"> <img src="/static/images/link2.jpg"></a>Running helps me show blood cancer who’s boss Rob, 30, was diagnosed
+                    with chronic myeloid leukaemia</h4>
+
+            </div>
+            <div class="col-4">
+                <h4><a href="https://bloodcancer.org.uk/support-for-you/living-well/stories/emma-bs-story/" ><img src="/static/images/link3.png"></a>Eating habits that boost my energy Emma, 39, was diagnosed with acute
+                    lymphoblastic leukaemia</h4>
+
+            </div>
+            <div class="col-4">
+                <h4><a href="https://bloodcancer.org.uk/support-for-you/living-well/stories/joannas2-story/"><img src="/static/images/link4.png"></a>Joanna after finally making it to the end of her blood cancer treatment
+                    explains how it give her second chance at life its best shot.
+            </div>
+        </div>
+<div class="bubbles">
+    
+    <img src="/static/images/bubble.png" >
+    <img src="/static/images/bubble.png" >
+    <img src="/static/images/bubble.png" >
+    <img src="/static/images/bubble.png" >
+    <img src="/static/images/bubble.png" >
+    <img src="/static/images/bubble.png" >
+    <img src="/static/images/bubble.png" >
+    <img src="/static/images/bubble.png" >
+    <img src="/static/images/bubble.png" >
+    <img src="/static/images/bubble.png" >
+    <img src="/static/images/bubble.png" >
+   
+</div>
+
+    </div>
+    <!-- Registry -->
+    <div class="registry">
+        <div class="small-container">
+            <div class="row">
+                <div class="col-2">
+                    <img src="/static/images/droplet.png" class="Registry-img" width="300px">
+                </div>
+                <div class="col-2">
+
+                    <h1>Join the registry & <br>become a potential lifesaver!</h1>
+                    <small>To become a potential blood stem cell donor you just have to check your eligibility and
+                        request a swab kit.<br></small>
+                    <a href="{{ url_for('register_func') }}" class="btn3"> JOIN THE REGISTRY </a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--footer-->
+    <div class="footer">
+        <div class="container">
+            <div class="row">
+                <div class="fotter-col-1">
+                    <h3>Get Involved</h3>
+                    <ul>
+                        <li>Become Doner</li>
+                        <li>Donate Money</li>
+                        <li>Programs</li>
+                        <li>Campaings</li>
+
+                        <li>Stories</li>
+
+
+                    </ul>
+                </div>
+                <div class="fotter-col-2">
+                    <h3>Learn more</h3>
+                    <ul>
+                        <li>About ELITE</li>
+                        <li>Blood Cancer</li>
+                        <li>Science & Research</li>
+                        <li>Stem Cell Donation</li>
+                        <li>Compliance & Financials</li>
+
+
+                    </ul>
+
+
+                </div>
+                <div class="fotter-col-2">
+                    <h3>Donar Info</h3>
+                    <ul>
+                        <li>Search for match</li>
+                        <li>A Potential Match</li>
+                        <li>Prepare to Donate</li>
+                        <li>Stem Cell Donation</li>
+                        <li>After the Donation</li>
+                        <li>Patient Meeting</li>
+
+                    </ul>
+                </div>
+                <div class="fotter-col-3">
+
+                    <ul>
+                       <li> <a href="{{ url_for('FAQ_func') }}"><img src="/static/images/faq.png" class="list" width="20px"></a> FAQ</li>
+                        <li><a href="{{ url_for('contact_us') }}"><img src="/static/images/contact.png" class="list" width="20px" ></a>Contact</li>
+                        <li><a href="{{ url_for('donation') }}"> <img src="/static/images/piggy-bank.png" class="list" width="20px"></a>Donate</li>
+                        <li><a href="https://www.bing.com/maps?osid=d6a1084b-0d00-42f9-be23-f1bd7765e7b0&cp=25.429855~81.766904&lvl=17&v=2&sV=2&form=S00027"><img src="./static/images/destination.png"
+                                    class="list" width="20px"></a>Location</li>
+
+
+                    </ul>
+                </div>
+
+            </div>
+        </div>
+
+    </div>
+
+
+    </div>
+    <!--pvltd-->
+    <div class="pvltd">
+        <div class="container">
+            <div class="row">
+                <div class="pvtltd-col-1">
+                    <P>Legal Notice</P>
+                </div>
+                <div class="pvltd-col-2">
+                    <P>Privacy Policy</P>
+                </div>
+                <div class="pvltd-col-3">
+                    <p>Consent Management</p>
+                </div>
+                <div class="pvtltd-col-4">
+                    <p class="copyright"><i class="fa-solid fa-copyright"></i>Copyright 2022 - Elite</p>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</body>
+</html>

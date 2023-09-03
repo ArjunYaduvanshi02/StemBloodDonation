@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+  <meta charset="UTF-8">
+  <title>Registration</title>
+  <link href="https://fonts.googleapis.com/css?family=Asap" rel="stylesheet"><link rel="stylesheet" href="static/css/style_register.css">
+   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <style>
+        input[type="submit"] {
+            background-color: pink;
+        }
+        /* Customize the login button color */
+        #login-btn {
+            background-color: #ff6987; /* Hot pink color */
+            border-color: #ff698c; /* Hot pink color */
+        }
+
+        #login-btn:hover {
+            background-color: #ff143fd2; /* Brighter pink color on hover */
+            border-color: #ff144b; /* Brighter pink color on hover */
+        }
+    </style>
+</head>
+<body>
+<!-- partial:index.partial.html -->
+<form class="login" action="/form_register" method="post">
+    <h1><center>REGISTRATION FORM</center></h1>
+    <input type="text" name='username' placeholder="Name" required>
+    <input type="text" name='phone' placeholder="Phone no." required>
+    <input type="text" name='gender' placeholder="Gender" required>
+    <input type="text" name='blood' placeholder="Blood group" required>
+    <input type="text" name='email' placeholder="Email" required>
+<input type="submit" id="login-btn" class="btn btn-primary btn-block" value="Register">
+</form>
+<!-- partial -->
+
+</body>
+</html>

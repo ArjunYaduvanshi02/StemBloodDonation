@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us - Donate to Help Blood Cancer Patients</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 0;
+            background-color: #f8f8f8; /* Light gray background */
+            color: #333; /* Dark text color */
+        }
+        header {
+            background-color: #e04f67; /* Dark red header background */
+            color: #fff;
+            text-align: center;
+            padding: 30px;
+        }
+        main {
+            padding: 40px;
+            max-width: 800px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            gap:40px;
+        }
+        .contact-form {
+            flex: 1;
+            background-color: #fff;
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+        }
+        .contact-form h2 {
+            font-size: 24px;
+            margin-bottom: 20px;
+            color: #6d3946; /* Dark pink header color */
+        }
+        .contact-form label {
+            display: block;
+            font-size: 18px;
+            margin-bottom: 8px;
+            color: #6d3946; /* Dark pink label color */
+        }
+        .contact-form input[type="text"],
+        .contact-form input[type="email"],
+        .contact-form textarea {
+            width: 100%;
+            padding: 10px;
+            font-size: 16px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            margin-bottom: 20px;
+        }
+        .contact-form textarea {
+            resize: vertical;
+            height: 30px;
+        }
+        .contact-form input[type="submit"] {
+            cursor: pointer;
+            background: #e04f67; /* Dark red button background */
+            color: #fff;
+            border: none;
+            padding: 10px 20px;
+            font-size: 18px;
+            border-radius: 5px;
+            transition: background 0.3s ease;
+        }
+        .contact-form input[type="submit"]:hover {
+            background: #c63347; /* Darker red button background on hover */
+        }
+
+        .organization-details {
+            flex: 1;
+            background-color: #fff;
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+        }
+        .organization-details h2 {
+            font-size: 24px;
+            margin-bottom: 20px;
+            color: #6d3946; /* Dark pink header color */
+        }
+        .organization-details p {
+            font-size: 18px;
+            line-height: 1.6;
+            color: #6d3946; /* Dark pink text color */
+            margin-bottom: 10px;
+        }
+        .organization-details i {
+            margin-right: 10px;
+            color: #e04f67; /* Dark red icon color */
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>One step to cure, countless lives to heal.</h1>
+    </header>
+    <main>
+        <!-- Contact Form -->
+        <div class="contact-form">
+            <h2>Contact Us</h2>
+            <form class="send" action="/form_send" method="post">
+            <h2>Send Message</h2>
+            <div class="inputBox">
+                <span>Full Name</span>
+              <input type="text" required="required" name="send_name">
+
+              </div>
+              <div class="inputBox">
+                  <span>Email</span>
+                <input type="text" required="required" name="send_email">
+
+                </div>
+                <div class="inputBox">
+                  <span>Type Your Message...</span>
+                  <textarea required="required" name="send_mess"></textarea>
+
+                  </div>
+                  <div class="inputBox">
+                    <input type="submit" value="Send">
+                    </div>
+          </form>
+        </div>
+
+        <!-- Organization Details -->
+        <div class="organization-details">
+            <h2>Organization Details</h2>
+            <p><i class="fas fa-building"></i><strong>Organization Name:</strong>Indian Institute of Information Technology Allahabad</p>
+            <p><i class="fas fa-map-marker-alt"></i><strong>Address:</strong> 211011,Jhalwa, Prayagraj,Uttar Pradesh</p>
+            <p><i class="fas fa-phone"></i><strong>Phone:</strong> +1 (555) 123-4567</p>
+            <p><i class="fas fa-envelope"></i><strong>Email:</strong> IIT2021250@IIITA.ac.in</p>
+        </div>
+    </main>
+</body>
+</html>

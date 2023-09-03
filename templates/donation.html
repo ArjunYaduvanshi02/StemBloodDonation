@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Donate to Help Blood Cancer Patients</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            text-align: center;
+            margin: 0;
+            padding: 0;
+            background-color: #fdf3f3; /* Light pink background */
+        }
+        header {
+            background-color: #e04f67; /* Dark red header */
+            color: #fff;
+            padding: 20px;
+            opacity: 0;
+        }
+        main {
+            padding: 40px;
+            max-width: 600px;
+            margin: 0 auto;
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 1s ease, transform 1s ease;
+        }
+        img {
+            max-width: 300px;
+            margin: 20px auto;
+            display: block;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+        }
+        p {
+            font-size: 18px;
+            line-height: 1.6;
+            color: #6d3946; /* Dark pink text color */
+        }
+        .donate-text {
+            font-size: 20px;
+            font-weight: bold;
+            color: #6d3946; /* Dark pink donate text color */
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Donate to Help Blood Cancer Patients</h1>
+    </header>
+    <main>
+        <img src="/static/images/qr.png" alt="Donation QR Code">
+        <p class="donate-text">Scan the QR code with your preferred payment app to make a donation.</p>
+        <p>Every contribution you make goes towards funding stem cell research and helping blood cancer patients. Your generosity can save lives and bring hope to those in need.</p>
+    </main>
+    <script>
+        // Fade-in effect for the header and slide-up effect for the content
+        document.addEventListener("DOMContentLoaded", function() {
+            const header = document.querySelector("header");
+            const mainContent = document.querySelector("main");
+
+            setTimeout(() => {
+                header.style.opacity = "1";
+                mainContent.style.opacity = "1";
+                mainContent.style.transform = "translateY(0)";
+            }, 300);
+        });
+    </script>
+</body>
+</html>

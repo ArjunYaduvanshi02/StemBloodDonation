@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Registration</title>
+      <link href="https://fonts.googleapis.com/css?family=Asap" rel="stylesheet"><link rel="stylesheet" href="static/css/style_register.css">
+   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <style>
+        table {
+            border-collapse: collapse;
+            width: 100%;
+        }
+
+        th, td {
+            padding: 8px;
+            text-align: left;
+            border-bottom: 1px solid #ddd;
+        }
+
+        th {
+            background-color: #FFC0CB;
+        }
+
+        tr:hover {
+            background-color: #f5f5f5;
+        }
+
+        /* Add animations */
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        /* Add colors */
+        body {
+            background-image: url('https://www.megaidea.net/wp-content/uploads/2021/06/fondo-rosado-01-www.megaidea.net_-1024x682.jpg');
+            font-family: Arial, sans-serif;
+            background-size: cover;
+
+        }
+
+        table {
+            background-color: #fff;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            animation: fadeIn 0.5s ease-in-out;
+        }
+
+        th {
+            background-color: #e6e6e6;
+            color: #333;
+        }
+
+        tr:hover {
+            background-color: #e6e6e6;
+        }
+        #login-btn {
+            background-color: #ff6987; /* Hot pink color */
+            border-color: #ff698c; /* Hot pink color */
+        }
+        .container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+
+        #login-btn:hover {
+            background-color: #ff143fd2; /* Brighter pink color on hover */
+            border-color: #ff144b; /* Brighter pink color on hover */
+        }
+        .top-heading {
+            text-align: center;
+            font-size: 60px;
+            margin-bottom: 20px;
+
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+   <h1 class="top-heading">REGISTRATION</h1>
+
+    <table>
+        <thead>
+            <tr>
+                <th><center>NAME</center></th>
+                <th><center>CONTACT_NUMBER</center></th>
+                <th><center>GENDER</center></th>
+                <th><center>BLOOD_GROUP</center></th>
+                <th><center>EMAIL</center></th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for row in data %}
+            <tr>
+                <td><center>{{ row[0] }}</center></td>
+                <td><center>{{ row[1] }}</center></td>
+                <td><center>{{ row[2] }}</center></td>
+                <td><center>{{ row[3] }}</center></td>
+                <td><center>{{ row[4] }}</center></td>
+                <td><center><button id="login-btn" class="btn btn-primary btn-block" onclick="getEmail('{{ row[4] }}')">REQUEST</button></center></td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</div>
+    <form class="get_email" action="/get_email" method="post">
+        <span id="emailData"></span>
+        <input type="hidden" id="emailInput" required="required" name="email_fetch">
+    </form>
+    <script>
+        function getEmail(email) {
+            console.log("Email:", email);
+            document.getElementById("emailData").innerHTML = email;
+            document.getElementById("emailInput").value = email;
+            document.querySelector('.get_email').submit();
+        }
+    </script>
+</body>
+</html>
