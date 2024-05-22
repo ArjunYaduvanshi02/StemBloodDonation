@@ -1,3 +1,4 @@
 flask
 smtp
 sqlite3
+gunicorn
