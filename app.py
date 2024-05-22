@@ -122,5 +122,3 @@ def get_email():
     cursor.close()
     conn.close()
     return render_template('user_response.html', data=data)
-if __name__ == '__main__':
-       app.run(host='0.0.0.0', port=81)
